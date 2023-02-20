@@ -6,4 +6,6 @@
 
 .App {
   height: 100vh;
+  background-image: url(static/icqbg.png);
+  background-repeat: no-repeat;
 }
