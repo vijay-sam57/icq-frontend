@@ -34,7 +34,7 @@ const Admin = () => {
     saveUsers();
   };
 
-  const deleteUser = (u, index) => {
+  const deleteUser = (u) => {
     setUsers(users.filter((user) => user !== u));
     saveUsers();
   };
