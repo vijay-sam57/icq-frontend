@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import { AvatarComponent } from "avatar-initials";
+import "./UserBar.css";
+
 const UserBar = () => {
   const [users, setUsers] = useState(JSON.parse(localStorage.getItem("users")));
+
+  const handleClick = (e) => {
+    e.target.classList.toggle("active");
+  };
   return (
-    <div className="w-25">
+    <div className="UserBar w-25">
       <div className="h5 p-3 mb-1 rounded-1 bg-dark text-info">Chat</div>
       {users.map((user) => {
         return (
-          <div className="d-flex mb-1 border-bottom border-1 border-secondary   ">
+          <div
+            onClick={handleClick}
+            className="user d-flex mb-1 border-bottom border-1 border-secondary"
+          >
             <AvatarComponent
               useGravatar={false}
               initials={user[0]}
