@@ -20,9 +20,13 @@ const Admin = () => {
     setUserName("");
   };
   const addUser = (user) => {
-    const add = users;
+    let add;
+    if (users == null) {
+      add = [];
+    } else {
+      add = users;
+    }
     add.push(user);
-    console.log(add);
     setUsers(add);
     saveUsers();
   };
@@ -94,17 +98,19 @@ const Admin = () => {
             </button>
           </div>
         </div>
-        {users.map((user, index) => {
-          return (
-            <User
-              key={index}
-              name={user}
-              index={index}
-              updateUser={updateUser}
-              deleteUser={deleteUser}
-            ></User>
-          );
-        })}
+        {users != null
+          ? users.map((user, index) => {
+              return (
+                <User
+                  key={index}
+                  name={user}
+                  index={index}
+                  updateUser={updateUser}
+                  deleteUser={deleteUser}
+                ></User>
+              );
+            })
+          : ""}
       </div>
     </div>
   );

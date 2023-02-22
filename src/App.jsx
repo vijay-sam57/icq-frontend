@@ -8,13 +8,13 @@ import Admin from "./components/Admin";
 const App = () => {
   return (
     <BrowserRouter>
-    <div className="App bg-image">
-      <Routes>
-        <Route path="/" element={<Login></Login>}></Route>
-        <Route path="/chat" element={<Chat></Chat>}></Route>
-        <Route path="/admin" element={<Admin></Admin>}></Route>
-      </Routes>
-    </div>
+      <div className="App bg-image">
+        <Routes>
+          <Route path="/" element={<Login></Login>}></Route>
+          <Route path="/chat" element={<Chat></Chat>}></Route>
+          <Route path="/admin" element={<Admin></Admin>}></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
