@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { AvatarComponent } from "avatar-initials";
+import UserAvatar from "./UserAvatar";
+
 const User = (props) => {
   const [showForm, setShowForm] = useState(false);
   const [user, SetUser] = useState(props.name);
@@ -13,15 +14,7 @@ const User = (props) => {
   return (
     <div className="User d-flex justify-content-between px-5 py-1">
       <div className="d-flex">
-        <AvatarComponent
-          useGravatar={false}
-          initials={props.name[0]}
-          size={36}
-          offsetY={20}
-          classes="rounded-circle mx-2 my-auto"
-          background="#6f42c1"
-          color="#ffffff"
-        ></AvatarComponent>
+        <UserAvatar user={props.name} />
         {showForm ? (
           <form onSubmit={handleSubmit}>
             <input
