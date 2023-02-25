@@ -6,11 +6,11 @@ const UserAvatar = (props) => {
     <AvatarComponent
       useGravatar={false}
       initials={props.user[0]}
-      size={36}
+      size={props.size || 36}
       classes="rounded-circle mx-2 my-3"
-      background="#6f42c1"
-      color="#ffffff"
-      offsetY={20}
+      background="#0d6efd"
+      color="#f8f9fa"
+      offsetY={props.size / 2 + 2 || 20}
     ></AvatarComponent>
   );
 };

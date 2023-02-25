@@ -1,13 +1,27 @@
 import React from "react";
 
-const MessageBody = () => {
+const MessageBody = (props) => {
   return (
-    <div className="flex-grow-1">
-      <div className="messages text-left">Hi</div>
-      <div className="messages text-right">Hello</div>
-      <div className="messages text-left">Wanna eat?</div>
-      <div className="messages text-right">Yes</div>
-      <div className="messages text-left">Come on then!</div>
+    <div className="w-auto overflow-auto">
+      {props.messages.map((message) => {
+        return (
+          <div className="clearfix">
+            <div
+              style={
+                message.sent === "You" ? { float: "right" } : { float: "left" }
+              }
+              className="card Msg m-2 border-0 shadow card-bg"
+            >
+              <p className="card-header text-primary h6 border-0">
+                {message.sent}
+              </p>
+              <p className="card-body small p-2 ms-3 m-2 rounded-3">
+                {message.content}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

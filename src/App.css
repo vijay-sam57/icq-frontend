@@ -9,3 +9,27 @@
   background-image: url(static/icqbg.png);
   background-repeat: no-repeat;
 }
+
+.Height {
+  height: 85vh;
+}
+
+.MessageHead {
+  background: #dbe8f5;
+}
+
+.Msg {
+  width: 35%;
+}
+
+.card-bg {
+  background: #a5a8ac00;
+}
+
+.UserBar .user {
+  opacity: 0.95;
+}
+.UserBar .user:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
